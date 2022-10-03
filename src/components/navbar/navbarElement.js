@@ -40,6 +40,12 @@ export const NavLogo = styled(LinkR)`
   margin-left:24px;
   font-weight: bold;
   text-decoration: none;
+
+  &:hover{
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    color: green;
+  }
 `
 
 export const MobileIcon  = styled.div`
@@ -71,6 +77,11 @@ export const NavMenu= styled.ul`
 
 export const NavItem = styled.li`
   height:80px;
+  
+  &:hover{
+    border-bottom:3px solid #01bf71;
+    transition: all 0.2s ease-in-out;
+  }
 `
 
 export const NavLinks = styled(LinkS)`
@@ -112,6 +123,7 @@ export const NavBtnLink = styled(LinkR)`
 
     &:hover{
         transition: all 0.2s ease-in-out;
+        text-decoration: none;
         background: #fff;
         color: #010606;
     }

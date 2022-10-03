@@ -82,6 +82,7 @@ export const BtnWrap =styled.div`
 
  &:hover{
     color: #000;
+    transition: all 0.2s ease-in-out;
  }
 `
 export const ImgWrap = styled.div`
