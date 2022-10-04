@@ -21,9 +21,9 @@ export const homeObjOne = {
 
 export const homeObjTwo = {
     id: 'discover',
-    lightBg: false,
-    lightText: true,
-    lightTextDesc: true,
+    lightBg: true,
+    lightText: false,
+    lightTextDesc: false,
     topLine: 'Discover',
     headLine: 'Here is your turn',
     description: 'search for your doctor and keep track of him/her.',
@@ -31,9 +31,9 @@ export const homeObjTwo = {
     imgStart: false,    //position of column 1 and 2 in the image abd text
     img: require('../../images/png-2.png'),
     alt: 'search',
-    dark: true,
-    primary: true,
-    darkText: false
+    dark: false,
+    primary: false,
+    darkText: true
 }
 
 //Sign up

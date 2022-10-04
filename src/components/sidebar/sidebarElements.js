@@ -46,6 +46,7 @@ export const SidebarMenu = styled.ul`
   @media screen and (max-width:480px){
     grid-template-rows: repeat(6, 60px);
   }
+
 `
 
 export const SidebarLink = styled(LinkS)`
@@ -60,7 +61,7 @@ export const SidebarLink = styled(LinkS)`
    cursor: pointer;
 
    &:hover{
-    color: #01bf71;
+    color: #01bf71 !important;
     transition: 0.2s ease-in-out;
    }
 `

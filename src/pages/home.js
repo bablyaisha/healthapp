@@ -4,6 +4,8 @@ import Sidebar from '../components/sidebar/sidebar'
 import HeroSection from '../components/HeroSection/heroSec'
 import InfoSection from '../components/InfoSection/info';
 import { homeObjOne,homeObjTwo,homeObjThree } from '../components/InfoSection/Data';
+import Services from '../components/Services/service';
+import Footer from '../components/Footer/footer';
 
 function Home() {
     const [isOpen, setIsOpen]= useState(false);
@@ -19,7 +21,9 @@ function Home() {
       <HeroSection />
       <InfoSection {...homeObjOne}/>
       <InfoSection {...homeObjTwo}/>
+      <Services />
       <InfoSection {...homeObjThree}/>
+      <Footer />
     </div>
   )
 }

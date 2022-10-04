@@ -14,7 +14,7 @@ function HeroSec() {
         setHover(!hover);
     }
   return (
-   <HeroContainer>
+   <HeroContainer id='home'>
      <HeroBg>
      <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
      </HeroBg>
@@ -26,7 +26,13 @@ function HeroSec() {
      </HeroP>
      <HeroBtnWrapper>
       <Button to="signup" onMouseEnter={onHover} 
-      onMouseLeave={onHover} primary='true' dark='true'>
+      onMouseLeave={onHover} primary='true' dark='true'
+      smooth={true} 
+      duration={400} 
+      spy={true} 
+      exact='true' 
+      offset={-5}
+      >
        Get started {hover ? <ArrowForward /> : <ArrowRight />}
       </Button>
      </HeroBtnWrapper>
