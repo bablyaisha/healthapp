@@ -1,7 +1,8 @@
 import React from 'react'
-import Icon1 from '../../images/png-1.png'
+import Icon1 from '../../images/website.jpeg'
 import Icon2 from '../../images/png-2.jpeg'
 import Icon3 from '../../images/png-3.gif'
+import Icon4 from '../../images/content.gif'
 import {ServicesContainer,
     ServicesH1,
     ServicesWrapper,
@@ -32,7 +33,7 @@ const Services = () => {
          <ServicesP>We have experienced graphic designers who makes good and structure designs for you.</ServicesP>
        </ServicesCard>
        <ServicesCard>
-        <ServicesIcon src={Icon3} />
+        <ServicesIcon src={Icon4} />
          <ServicesH2><b>Content Writing</b></ServicesH2>
          <ServicesP>Need help in content writing here you can give us your work and we provide you with good contents.</ServicesP>
        </ServicesCard>
