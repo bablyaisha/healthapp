@@ -9,7 +9,7 @@ export const homeObjOne = {
     headLine: 'Who We are?',
     description: 'Our company is a technology-driven startup that provides innovative solutions for different type of services related to technology. We are specialized in providing solutions for our clients. Our team is comprised of experienced developers and content writers who are experts in the latest technologies. We are dedicated to providing our clients with best-in-class solutions that meet their unique needs. ',
     imgStart: true,    //position of column 1 and 2 in the image abd text
-    img: require('../../images/png-1.png'),
+    img: require('../../images/png-1.gif'),
     alt: 'Car',
     dark: true,
     primary: true,
