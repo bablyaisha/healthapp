@@ -9,18 +9,17 @@ MobileIcon,
 NavMenu, 
 NavItem, 
 NavLinks,
-NavBtn, NavBtnLink
 } from './navbarElement'
 
 
 function Navbar({toggle}) {
-  const[scrollNav, setScrollNav]= useState(true);
+  const[scrollNav, setScrollNav]= useState(false);
    
    const changeNav = ()=>{
     if(window.scrollY >=80){
-      setScrollNav(false); 
+      setScrollNav(true); 
     }else{
-      setScrollNav(true);
+      setScrollNav(false);
     }
    }
 
@@ -57,7 +56,7 @@ function Navbar({toggle}) {
          spy={true} 
          exact='true' 
          offset={-5}
-         >Discover</NavLinks>
+         >Contact Us</NavLinks>
         </NavItem>
         <NavItem>
          <NavLinks to='services'
@@ -68,19 +67,7 @@ function Navbar({toggle}) {
          offset={-5}
          >Services</NavLinks>
         </NavItem>
-        <NavItem>
-         <NavLinks to='signup'
-         smooth={true} 
-         duration={400} 
-         spy={true} 
-         exact='true' 
-         offset={-5}
-         >Sign Up</NavLinks>
-        </NavItem>
         </NavMenu>
-        <NavBtn>
-           <NavBtnLink to='/signin'>Sign In</NavBtnLink>
-        </NavBtn>
         </NavbarContainer>
       </Nav>
       </IconContext.Provider>
