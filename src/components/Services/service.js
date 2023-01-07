@@ -2,7 +2,7 @@ import React from 'react'
 import Icon1 from '../../images/website.jpeg'
 import Icon2 from '../../images/mobile.gif'
 import Icon3 from '../../images/png-3.gif'
-import Icon4 from '../../images/content.gif'
+// import Icon4 from '../../images/content.gif'
 import {ServicesContainer,
     ServicesH1,
     ServicesWrapper,
