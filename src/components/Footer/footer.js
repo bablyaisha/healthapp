@@ -59,8 +59,8 @@ const Footer = () => {
                         </FooterLinkItems>*/}
                         <p style={{color: 'white'}}>For any queries - </p>
                         <TextWrapper style={{color: 'white'}}>&nbsp;Whatspp at :  +91 9431763375 || call us at: 9006146183
-                        </TextWrapper>&nbsp;
-                        <TextWrapper style={{color: 'white'}}>|| E-mail: thehealthapp99@gmail.com</TextWrapper>
+                        </TextWrapper>
+                        <TextWrapper style={{color: 'white'}}>&nbsp;|| E-mail: thehealthapp99@gmail.com</TextWrapper>
                     </FooterLinksWrapper>
                    
                 </FooterLinksContainer>

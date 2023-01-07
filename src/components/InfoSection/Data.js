@@ -25,7 +25,7 @@ export const homeObjTwo = {
     lightTextDesc: false,
     topLine: 'Contact details',
     headLine: 'Let We know Each other',
-    description: 'Whatsapp Us at: +91 9431763375 , call us at: 9006146183',
+    description: 'Whatsapp Us at: +91 9431763375 , call us at: 9006146183 or 7258904949',
     imgStart: false,    //position of column 1 and 2 in the image abd text
     img: require('../../images/png-2.jpeg'),
     alt: 'search',

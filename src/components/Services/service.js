@@ -2,7 +2,7 @@ import React from 'react'
 import Icon1 from '../../images/website.jpeg'
 import Icon2 from '../../images/mobile.gif'
 import Icon3 from '../../images/png-3.gif'
-// import Icon4 from '../../images/content.gif'
+import Icon4 from '../../images/content.gif'
 import {ServicesContainer,
     ServicesH1,
     ServicesWrapper,
@@ -30,13 +30,23 @@ const Services = () => {
         <ServicesCard>
         <ServicesIcon src={Icon3} />
          <ServicesH2><b>Save your Time</b></ServicesH2>
-         <ServicesP>We keep you up-to-date about the timing of the doctors in and out.</ServicesP>
+         <ServicesP>We keep you up-to-date about the timing of your appointment with respective Doctor.</ServicesP>
        </ServicesCard>
-      {/* <ServicesCard>
+      <ServicesCard>
         <ServicesIcon src={Icon4} />
-         <ServicesH2><b>Content Writing</b></ServicesH2>
-         <ServicesP>Need help in content writing here you can give us your work and we provide you with good contents.</ServicesP>
-  </ServicesCard> */}
+         <ServicesH2><b>Loan Facility</b></ServicesH2>
+         <ServicesP>We provide instant loan facility for the medical service through our app at hospital.</ServicesP>
+  </ServicesCard>
+  <ServicesCard>
+  <ServicesIcon src={Icon4} />
+  <ServicesH2><b>Emergency Service</b></ServicesH2>
+  <ServicesP>We'll connect the patient to the nearest hospital and will send patient's location for quick ambulance support.</ServicesP>
+</ServicesCard>
+<ServicesCard>
+  <ServicesIcon src={Icon4} />
+  <ServicesH2><b>Personal Attendant</b></ServicesH2>
+  <ServicesP>On request we'll provide a attendant for elder citizens to reach hospital and get back to home safely.</ServicesP>
+</ServicesCard>
         </ServicesWrapper>
       </ServicesContainer>
     </>
