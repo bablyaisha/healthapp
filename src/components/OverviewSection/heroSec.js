@@ -13,7 +13,7 @@ function HeroSec() {
      <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
      </HeroBg>
      <HeroContent>
-     <HeroH1>We make your work easy</HeroH1>
+     <HeroH1>We Provide comfort and save your Time.</HeroH1>
      <HeroP>
        Explore more about us.
      </HeroP>

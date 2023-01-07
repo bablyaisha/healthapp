@@ -19,24 +19,24 @@ const Services = () => {
         <ServicesWrapper>
          <ServicesCard>
           <ServicesIcon src={Icon1} />
-           <ServicesH2><b>Website Development</b></ServicesH2>
-           <ServicesP>We have experienced website developers who work on both front part and back part of the website. </ServicesP>
+           <ServicesH2><b>Booking in Hospitals</b></ServicesH2>
+           <ServicesP>We provide a booking system to the customer to have appointment with the respected doctor.</ServicesP>
          </ServicesCard>
          <ServicesCard>
          <ServicesIcon src={Icon2} />
-          <ServicesH2><b>Mobile App Development</b></ServicesH2>
-          <ServicesP>We have experienced mobile App developers who work for you and make your mobile app more efficient, user-friendly and attractive.</ServicesP>
+          <ServicesH2><b>Cab to Hospital</b></ServicesH2>
+          <ServicesP>We provide cab facility to the customers to reach the respected hospital.</ServicesP>
         </ServicesCard>
         <ServicesCard>
         <ServicesIcon src={Icon3} />
-         <ServicesH2><b>Graphic Designing</b></ServicesH2>
-         <ServicesP>We have experienced graphic designers who makes good and structure designs for you.</ServicesP>
+         <ServicesH2><b>Save your Time</b></ServicesH2>
+         <ServicesP>We keep you up-to-date about the timing of the doctors in and out.</ServicesP>
        </ServicesCard>
-       <ServicesCard>
+      {/* <ServicesCard>
         <ServicesIcon src={Icon4} />
          <ServicesH2><b>Content Writing</b></ServicesH2>
          <ServicesP>Need help in content writing here you can give us your work and we provide you with good contents.</ServicesP>
-       </ServicesCard>
+  </ServicesCard> */}
         </ServicesWrapper>
       </ServicesContainer>
     </>

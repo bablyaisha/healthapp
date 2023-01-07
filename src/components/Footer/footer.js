@@ -57,9 +57,10 @@ const Footer = () => {
                             <FooterLink to='/signin'>Youtube</FooterLink>
                             <FooterLink to='/signin'>Twitter</FooterLink>
                         </FooterLinkItems>*/}
-                        <TextWrapper style={{color: 'white'}}>Whatspp at :  +91 9431763375  call us at: 9006146183
-                        </TextWrapper>
-                        <TextWrapper style={{color: 'white'}}>e-mail: thehealthapp99@gmail.com</TextWrapper>
+                        <p style={{color: 'white'}}>For any queries - </p>
+                        <TextWrapper style={{color: 'white'}}>&nbsp;Whatspp at :  +91 9431763375 || call us at: 9006146183
+                        </TextWrapper>&nbsp;
+                        <TextWrapper style={{color: 'white'}}>|| E-mail: thehealthapp99@gmail.com</TextWrapper>
                     </FooterLinksWrapper>
                    
                 </FooterLinksContainer>
@@ -71,18 +72,6 @@ const Footer = () => {
                    <SocialLogo to='/' onClick={toggleHome}>The Health App</SocialLogo>
                    <WebsiteRights>The health app &copy; {new Date().getFullYear()}  All Rights Reserved.</WebsiteRights>
                <SocialIcons>
-                       { /* <SocialIconLink href='//www.facebook.com' target='_blank' aria-label='Facebook'>
-                      <FaFacebook />
-                    </SocialIconLink>
-                     <SocialIconLink href='//www.instagram.com' target='_blank' aria-label='Instagram'>
-                      <FaInstagram />
-                     </SocialIconLink>
-                     <SocialIconLink href='//www.twitter.com' target='_blank' aria-label='Twitter'>
-                      <FaTwitter />
-                     </SocialIconLink>
-                     <SocialIconLink href='//www.linkedin.com' target='_blank' aria-label='LinkedIn'>
-                          <FaYoutube />
-                     </SocialIconLink>*/}
                      <SocialIconLink href='https://www.linkedin.com/in/health-app-2a911319b' target='_blank' aria-label='LinkedIn'>
                     
                      <FaLinkedinIn />
