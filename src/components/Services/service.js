@@ -1,8 +1,10 @@
 import React from 'react'
 import Icon1 from '../../images/website.jpeg'
-import Icon2 from '../../images/mobile.gif'
+import Icon2 from '../../images/cab.jpg'
 import Icon3 from '../../images/png-3.gif'
-import Icon4 from '../../images/content.gif'
+import Icon4 from '../../images/loan.jpg'
+import Icon5 from '../../images/emergency.jpg'
+import Icon6 from '../../images/attend.jpg'
 import {ServicesContainer,
     ServicesH1,
     ServicesWrapper,
@@ -38,12 +40,12 @@ const Services = () => {
          <ServicesP>We provide instant loan facility for the medical service through our app at hospital.</ServicesP>
   </ServicesCard>
   <ServicesCard>
-  <ServicesIcon src={Icon4} />
+  <ServicesIcon src={Icon5} />
   <ServicesH2><b>Emergency Service</b></ServicesH2>
   <ServicesP>We'll connect the patient to the nearest hospital and will send patient's location for quick ambulance support.</ServicesP>
 </ServicesCard>
 <ServicesCard>
-  <ServicesIcon src={Icon4} />
+  <ServicesIcon src={Icon6} />
   <ServicesH2><b>Personal Attendant</b></ServicesH2>
   <ServicesP>On request we'll provide a attendant for elder citizens to reach hospital and get back to home safely.</ServicesP>
 </ServicesCard>
