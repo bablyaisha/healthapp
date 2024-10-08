@@ -1,6 +1,6 @@
 import React from 'react';
 import { animateScroll as scroll } from 'react-scroll';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { FaLinkedinIn } from 'react-icons/fa';
 import {
   FooterContainer,
@@ -14,7 +14,7 @@ import {
   SocialIconLink,
   WebsiteRights,
   FooterLink,
-  TextWrapper,
+  // TextWrapper,
   LinksRow,
   InfoRow
 } from './footerElement';
