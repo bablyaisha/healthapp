@@ -4,7 +4,7 @@ import React from 'react';
 import './Terms&Condition.css'; // Import the CSS file
 import { WebsiteRights } from '../../components/Footer/footerElement';
 import Navbar from '../../components/navbar/navbar';
-import Footer from '../../components/Footer/footer';
+// import Footer from '../../components/Footer/footer';
 
 const TermsAndConditions = () => {
   return (
