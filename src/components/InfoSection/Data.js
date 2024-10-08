@@ -7,7 +7,7 @@ export const homeObjOne = {
     lightTextDesc: true,
     topLine: 'About',
     headLine: 'Who We are?',
-    description: 'Our company is a technology-driven startup that provides innovative solution to efficiently manage crowd in hospitals online by using AI and ML.',
+    description: 'Welcome to HealthApp, your trusted partner for seamless doctor consultations! Designed with your convenience in mind, HealthApp simplifies the process of scheduling and managing your medical appointments in real-time basis.',
     imgStart: true,    //position of column 1 and 2 in the image abd text
     img: require('../../images/png-1.gif'),
     alt: 'about',
@@ -24,7 +24,7 @@ export const homeObjTwo = {
     lightText: false,
     lightTextDesc: false,
     topLine: 'Contact details',
-    headLine: 'Let We know Each other',
+    headLine: 'At Your Service',
     description: 'Whatsapp Us at: +91 9431763375 , call us at: 9006146183 or 7258904949',
     imgStart: false,    //position of column 1 and 2 in the image abd text
     img: require('../../images/png-2.jpeg'),

@@ -17,12 +17,18 @@ function Home() {
   return (
     <>
       <Sidebar isOpen={isOpen} toggle={toggle}/>
-      <Navbar  toggle={toggle}/>
+       <Navbar  toggle={toggle}/> 
       <HeroSection />
+      <section id='about'>
       <InfoSection {...homeObjOne}/>
+      </section>
+      <section id='discover'>
       <InfoSection {...homeObjTwo}/>
+      </section>
+
+      <section id='services'>
       <Services />
-    
+      </section>
       <Footer />
     </>
   )
