@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {FaBars} from 'react-icons/fa'
 import { animateScroll as scroll,scroller} from 'react-scroll';
 import { IconContext } from 'react-icons/lib';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import {Nav,
 NavbarContainer, 
 NavLogo,

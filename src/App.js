@@ -4,7 +4,7 @@ import Home from './pages/home';
 //import Services from './components/Services/service';
 import BookingPage from './pages/Booking_Page/BookingPage';
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
-import Navbar from './components/navbar/navbar';
+// import Navbar from './components/navbar/navbar';
 import TermsAndConditions from './pages/Terms&Conditions_Page/Terms&Condition';
 import PrivacyPolicy from './pages/Terms&Conditions_Page/PrivacyPolicy';
 import TermsCondition_Main from './pages/Terms&Conditions_Page/TermsCondition_Main';

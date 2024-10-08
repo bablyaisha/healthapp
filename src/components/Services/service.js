@@ -1,11 +1,11 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Icon1 from '../../images/website.jpeg'
-import Icon2 from '../../images/cab.jpg'
+// import Icon2 from '../../images/cab.jpg'
 import Icon3 from '../../images/png-3.gif'
-import Icon4 from '../../images/loan.jpg'
+// import Icon4 from '../../images/loan.jpg'
 import Icon5 from '../../images/emergency.jpg'
-import Icon6 from '../../images/attend.jpg'
+// import Icon6 from '../../images/attend.jpg'
 import {ServicesContainer,
     ServicesH1,
     ServicesWrapper,
