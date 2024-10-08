@@ -1,5 +1,5 @@
 import React from 'react';
-import './Terms&Condition.css'; // Import the CSS file
+import './TermsCondition.css'; // Import the CSS file
 import { WebsiteRights } from '../../components/Footer/footerElement';
 import Navbar from '../../components/navbar/navbar';
 // import Footer from '../../components/Footer/footer';

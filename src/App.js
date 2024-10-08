@@ -5,9 +5,9 @@ import Home from './pages/home';
 import BookingPage from './pages/Booking_Page/BookingPage';
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 // import Navbar from './components/navbar/navbar';
-import TermsAndConditions from './pages/Terms&Conditions_Page/Terms&Condition';
-import PrivacyPolicy from './pages/Terms&Conditions_Page/PrivacyPolicy';
-import TermsCondition_Main from './pages/Terms&Conditions_Page/TermsCondition_Main';
+import TermsAndConditions from './pages/TermsConditionsPage/TermsCondition';
+import PrivacyPolicy from './pages/TermsConditionsPage/PrivacyPolicy';
+import TermsConditionMain from './pages/TermsConditionsPage/TermsConditionMain';
 // import Form from './pages/Form/Form';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
        <Route path='/booking' element={<BookingPage /> } /> 
        <Route path='/cancellation&refund' element={<TermsAndConditions /> } /> 
        <Route path='/privacypolicy' element={<PrivacyPolicy /> } /> 
-       <Route path='/terms&conditions' element={<TermsCondition_Main />} />
+       <Route path='/terms&conditions' element={<TermsConditionMain />} />
        {/* <Route path='/remove-details' element={<Form />} /> */}
       </Routes>
     </Router>
