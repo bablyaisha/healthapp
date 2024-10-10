@@ -19,7 +19,7 @@ const RemoveDetails = () => {
   const setupRecaptcha = () => {
     return new Promise((resolve, reject) => {
       window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
-        'size': 'normal', // Invisible for production, visible for testing
+        'size': 'invisible', // Invisible for production, visible for testing
         'callback': () => resolve(),
         'expired-callback': () => {
           setMessage('Recaptcha expired, please try again.');
