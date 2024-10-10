@@ -1,19 +1,9 @@
-// RemoveDetails.js
 import React, { useState } from "react";
 import { db, auth } from "../../components/configuration/firebaseConfig";
 import { ref, remove, query, orderByChild, equalTo, get } from "firebase/database";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
-// import Navbar from "../../components/navbar/navbar";
 import logo from '../../images/logo.png';
-import {
-    // Nav,
-    // NavbarContainer, 
-    NavLogo,
-    // MobileIcon, 
-    // NavMenu, 
-    // NavItem, 
-    // NavLinks,
-    } from '../../components/navbar/navbarElement'
+import { NavLogo } from '../../components/navbar/navbarElement';
 import './RemoveDetails.css';
 
 const RemoveDetails = () => {
@@ -23,93 +13,96 @@ const RemoveDetails = () => {
   const [otp, setOtp] = useState("");
   const [confirmationResult, setConfirmationResult] = useState(null);
   const [message, setMessage] = useState("");
-  const [isOtpSent, setIsOtpSent] = useState(false); // New state for tracking OTP sent
+  const [isOtpSent, setIsOtpSent] = useState(false);
 
+  // Function to setup reCAPTCHA
   const setupRecaptcha = () => {
-    window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
-      'size': 'normal', // Change to 'normal' for debugging (invisible for production)
-      'callback': (response) => {
-        // reCAPTCHA solved, allow OTP request
-        sendOtp();
-      },
-      'expired-callback': () => {
-        // Response expired, reCAPTCHA reset required.
-        setMessage('Recaptcha expired, please try again.');
-      }
-    }, auth);
+    return new Promise((resolve, reject) => {
+      window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
+        'size': 'normal', // Invisible for production, visible for testing
+        'callback': () => resolve(),
+        'expired-callback': () => {
+          setMessage('Recaptcha expired, please try again.');
+          reject('Recaptcha expired');
+        }
+      }, auth);
+
+      window.recaptchaVerifier.render().then(() => resolve());
+    });
   };
 
-  const sendOtp = () => {
-    setupRecaptcha();
-    const appVerifier = window.recaptchaVerifier;
-    const phoneNumber = "+91" + phone.trim(); // Add country code
-
-    console.log("Sending OTP to:", phoneNumber); // Log the phone number
-    signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-      .then((result) => {
-        setConfirmationResult(result);
-        setMessage("OTP sent to " + phone);
-        setIsOtpSent(true); // Set to true after OTP is sent
-      })
-      .catch((error) => {
-        console.error("Error during OTP sending:", error);
-        setMessage("Failed to send OTP.");
-      });
+  // Function to send OTP
+  const sendOtp = async () => {
+    try {
+      await setupRecaptcha();
+      const appVerifier = window.recaptchaVerifier;
+      const phoneNumber = "+91" + phone.trim();
+      
+      const result = await signInWithPhoneNumber(auth, phoneNumber, appVerifier);
+      setConfirmationResult(result);
+      setMessage(`OTP sent to ${phone}`);
+      setIsOtpSent(true);
+    } catch (error) {
+      console.error("Error sending OTP:", error);
+      setMessage("Failed to send OTP. Please try again.");
+    }
   };
 
-   // Verify OTP and delete the user's data
-  const verifyOtpAndDelete = () => {
-    confirmationResult.confirm(otp).then((result) => {
-      // User signed in successfully
-      const user = result.user;
-    //   const userId = user.uid; // This is the unique ID used to delete from Firebase
+  // Function to verify OTP and delete user details
+  const verifyOtpAndDelete = async () => {
+    if (!confirmationResult) {
+      setMessage("Please send OTP first.");
+      return;
+    }
 
-      // Reference to user's data in the database
-      const userRef = query(ref(db, 'India/User_Details'),orderByChild('MobileNoOfUser'), equalTo(phone));
-      get(userRef).then((snapshot) => {
-        if (snapshot.exists()) {
-          // Step 2: Get the userId (key)
-          const userId = Object.keys(snapshot.val())[0]; // Assuming first match, as phone number should be unique
- // : Delete the user's record using userId
- const deleteRef = ref(db, `India/User_Details/${userId}`);
-      // Delete the user's record
-      remove(deleteRef)
-        .then(() => {
-          setMessage("User details successfully deleted.");
-        })
-        .catch((error) => {
-          console.error("Error deleting user details:", error);
-          setMessage("Error deleting user details.");
-        });
-    }else {
+    try {
+      const result = await confirmationResult.confirm(otp);
+      console.log("Result ", result);
+      const userRef = query(ref(db, 'India/User_Details'), orderByChild('MobileNoOfUser'), equalTo(phone));
+      const snapshot = await get(userRef);
+
+      if (snapshot.exists()) {
+        const userId = Object.keys(snapshot.val())[0]; // Get the first matched record
+        const deleteRef = ref(db, `India/User_Details/${userId}`);
+        
+        await remove(deleteRef);
+        setMessage("User details successfully deleted.");
+      } else {
         setMessage("User not found.");
       }
-    }).catch((error) => {
-      console.error("Error querying user:", error);
-      setMessage("Error finding user.");
-    });
-}).catch((error) => {
-    console.error("Error verifying OTP:", error);
-    setMessage("Incorrect OTP.");
-  });
+    } catch (error) {
+      console.error("Error verifying OTP or deleting user details:", error);
+      setMessage("Incorrect OTP or error deleting details. Please try again.");
+      window.recaptchaVerifier.clear(); // Clear reCAPTCHA for retry
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    sendOtp();
+
+    // Basic validation for phone number (Indian format)
+    const phonePattern = /^[6-9]\d{9}$/; // Simple regex for Indian phone numbers
+    if (!phonePattern.test(phone.trim())) {
+      setMessage("Please enter a valid phone number.");
+      return;
+    }
+
+    try {
+      await sendOtp();
+    } catch (error) {
+      setMessage("Error sending OTP, please try again.");
+    }
   };
 
   return (
     <div>
-    <div style={{ backgroundColor: 'black', padding: '10px' }}>
-      <NavLogo>
-        <img src={logo} alt='logo' style={{width:'40px', height:'40px', marginRight:'10px'}} />
-        The Health App</NavLogo>
-        </div>
-        {/* <MobileIcon onClick={toggle}>
-          <FaBars /> 
-        </MobileIcon> */}
-    {/* <Navbar/> */}
+      <div style={{ backgroundColor: 'black', padding: '10px' }}>
+        <NavLogo>
+          <img src={logo} alt='logo' style={{width:'40px', height:'40px', marginRight:'10px'}} />
+          The Health App
+        </NavLogo>
+      </div>
+
       <h2>Remove Details</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -131,7 +124,7 @@ const RemoveDetails = () => {
           />
         </div>
         <div>
-          <label>Registered Email ID</label>
+          <label>Registered Email ID:</label>
           <input
             type="email"
             value={email}
@@ -142,7 +135,7 @@ const RemoveDetails = () => {
         <button type="submit" disabled={isOtpSent}>Send OTP</button>
       </form>
 
-      {confirmationResult && (
+      {isOtpSent && (
         <>
           <h3>Enter OTP</h3>
           <input

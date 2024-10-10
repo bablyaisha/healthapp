@@ -12,11 +12,12 @@ const firebaseConfig = {
   storageBucket: "health2-e2d33.appspot.com",
   messagingSenderId: "595369257323",
   appId: "1:595369257323:web:5b2e157d0b9a8fe5bbc42e",
-  // measurementId: "G-GYT22WPKMT"
+  measurementId: "G-GYT22WPKMT"
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const auth = getAuth(app);
+auth.languageCode = 'in';
 
 export { db, auth };
