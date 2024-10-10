@@ -8,7 +8,7 @@ import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 import TermsAndConditions from './pages/TermsConditionsPage/TermsCondition';
 import PrivacyPolicy from './pages/TermsConditionsPage/PrivacyPolicy';
 import TermsConditionMain from './pages/TermsConditionsPage/TermsConditionMain';
-// import Form from './pages/Form/Form';
+import RemoveDetails from './pages/RemoveDetails/RemoveDetails';
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
        <Route path='/cancellation&refund' element={<TermsAndConditions /> } /> 
        <Route path='/privacypolicy' element={<PrivacyPolicy /> } /> 
        <Route path='/terms&conditions' element={<TermsConditionMain />} />
-       {/* <Route path='/remove-details' element={<Form />} /> */}
+       <Route path='/removedetails' element={<RemoveDetails />} />
       </Routes>
     </Router>
   );

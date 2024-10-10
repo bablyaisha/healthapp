@@ -77,7 +77,7 @@ function Navbar({toggle}) {
         </NavItem>
         {/* Add the link to the form page */}
         {/* <NavItem>
-                <NavLinks as={Link} to="/remove-details">Form Details</NavLinks> 
+                <NavLinks as={Link} to="/removedetails">Remove Details</NavLinks> 
               </NavItem> */}
         {/* <NavItem>
          <NavLinks to='booking'
